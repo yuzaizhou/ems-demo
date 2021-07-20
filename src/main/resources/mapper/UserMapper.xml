@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winner.mes.ems.dao.mapper.UserMapper">
+    <select id="selectPageListVo" resultType="com.winner.mes.ems.controller.vo.UserVo">
+        select *
+        from user u
+        where u.del_flag = 1
+        <if test="userCondition.code != null and userCondition.code!='' ">
+            and (u.code like CONCAT('%',#{userCondition.code},'%') or u.user_name like CONCAT('%',#{userCondition.code},'%'))
+        </if>
+
+        <if test="userCondition.createTime != null  ">
+            and u.create_time >= #{userCondition.createTime}
+        </if>
+        order by u.create_time desc
+    </select>
+
+</mapper>

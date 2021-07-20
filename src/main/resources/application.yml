@@ -1,0 +1,33 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: ems
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.64.130:3306/ems
+    username: root
+    password: root
+  redis:
+    database: 0
+    host: 192.168.64.130
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 300
+  rabbitmq:
+    host: 192.168.64.130
+    port: 5672
+    username: guest
+    password: guest
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.winner.mes.ems.entity
