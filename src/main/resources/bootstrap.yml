@@ -1,0 +1,11 @@
+server:
+  port: 8890
+spring:
+  cloud:
+    config:
+      profile: namespace
+      label: master
+      name: mes-data-center
+      uri: http://192.168.206.208:1702/
+  application:
+    name: data-center
