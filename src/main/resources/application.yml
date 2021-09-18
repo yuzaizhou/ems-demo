@@ -7,7 +7,7 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.64.130:3306/ems
+    url: jdbc:mysql://192.168.64.128:3306/ems
     username: root
     password: root
   redis:

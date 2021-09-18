@@ -6,7 +6,6 @@ import com.winner.mes.ems.controller.condition.UserCondition;
 import com.winner.mes.ems.controller.vo.UserVo;
 import com.winner.mes.ems.entity.User;
 import com.winner.mes.ems.service.UserService;
-import com.winner.mes.ems.utils.RedisUtil;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +27,7 @@ public class UserController {
     @ApiOperation("查询用户列表")
     @PostMapping("/user/search")
     @ResultWrapper
+
     public IPage<UserVo> getList(@RequestBody UserCondition userCondition) {
         IPage<UserVo> list = userService.getListQuery(userCondition);
         return list;

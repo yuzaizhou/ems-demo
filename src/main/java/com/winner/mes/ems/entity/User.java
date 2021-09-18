@@ -22,5 +22,8 @@ public class User {
     private String phone;
     private String email;
     private Date createTime;
+    private Integer status = 1;
+    private Integer type = 1;
+    private Integer sex = 1;
     private int delFlag = 1;
 }

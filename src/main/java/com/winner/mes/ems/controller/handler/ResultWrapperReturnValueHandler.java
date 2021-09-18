@@ -65,5 +65,6 @@ public class ResultWrapperReturnValueHandler implements HandlerMethodReturnValue
                 .write(objectMapper.writeValueAsString(responseContent));
 
     }
+
 }
 
